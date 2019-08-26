@@ -1,0 +1,10 @@
+D:\Projects\Desktop\dotNet\atest\atest\obj\Debug\atest.csprojAssemblyReference.cache
+D:\Projects\Desktop\dotNet\atest\atest\obj\Debug\atest.Form1.resources
+D:\Projects\Desktop\dotNet\atest\atest\obj\Debug\atest.csproj.GenerateResource.cache
+D:\Projects\Desktop\dotNet\atest\atest\obj\Debug\atest.csproj.CoreCompileInputs.cache
+D:\Projects\Desktop\dotNet\atest\atest\bin\Debug\electrika.exe.config
+D:\Projects\Desktop\dotNet\atest\atest\bin\Debug\electrika.exe
+D:\Projects\Desktop\dotNet\atest\atest\bin\Debug\electrika.pdb
+D:\Projects\Desktop\dotNet\atest\atest\obj\Debug\electrika.Properties.Resources.resources
+D:\Projects\Desktop\dotNet\atest\atest\obj\Debug\electrika.exe
+D:\Projects\Desktop\dotNet\atest\atest\obj\Debug\electrika.pdb
