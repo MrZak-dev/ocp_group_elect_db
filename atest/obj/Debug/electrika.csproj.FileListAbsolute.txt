@@ -18,4 +18,5 @@ D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.exe
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.pdb
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.csprojAssemblyReference.cache
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.main.resources
-D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.summary.resources
+D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.Dashboard.resources
+D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.Search.resources

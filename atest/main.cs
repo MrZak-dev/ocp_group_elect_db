@@ -40,13 +40,26 @@ namespace electrika
         private void Button1_Click(object sender, EventArgs e)
         {
             //creating a new summary panel
-            Summary summaryPanel = new Summary(); //we will pass data through constructure next time
-            summaryPanel.TopLevel = false;
+            Dashboard dashboardPanel = new Dashboard(); //we will pass data through constructure next time
+            dashboardPanel.TopLevel = false;
 
             //clear the panel old controls content 
             panelsContainer.Controls.Clear();
-            panelsContainer.Controls.Add(summaryPanel);
-            summaryPanel.Show();
+            panelsContainer.Controls.Add(dashboardPanel);
+            dashboardPanel.Show();
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            //creating a new summary panel
+            Search searchPanel = new Search(); //we will pass data through constructure next time
+            searchPanel.TopLevel = false;
+
+            //clear the panel old controls content 
+            panelsContainer.Controls.Clear();
+            panelsContainer.Controls.Add(searchPanel);
+            searchPanel.Show();
 
         }
     }

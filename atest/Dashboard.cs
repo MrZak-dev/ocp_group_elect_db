@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace electrika
 {
-    public partial class Summary : Form
+    public partial class Dashboard : Form
     {
-        public Summary()
+        public Dashboard()
         {
             InitializeComponent();
         }
