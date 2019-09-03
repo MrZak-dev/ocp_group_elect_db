@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace electrika
 {
     public partial class Main : Form
@@ -52,7 +53,7 @@ namespace electrika
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //creating a new summary panel
+            //creating a new Search panel
             Search searchPanel = new Search(); //we will pass data through constructure next time
             searchPanel.TopLevel = false;
 
@@ -61,6 +62,18 @@ namespace electrika
             panelsContainer.Controls.Add(searchPanel);
             searchPanel.Show();
 
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            //creating a new Operations panel
+            Operations operationsPanel = new Operations(); //we will pass data through constructure next time
+            operationsPanel.TopLevel = false;
+
+            //clear the panel old controls content 
+            panelsContainer.Controls.Clear();
+            panelsContainer.Controls.Add(operationsPanel);
+            operationsPanel.Show();
         }
     }
 }

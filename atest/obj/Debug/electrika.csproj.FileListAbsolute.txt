@@ -20,3 +20,14 @@ D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.csprojAssemblyRef
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.main.resources
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.Dashboard.resources
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.Search.resources
+D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.Operations.resources
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\EntityFramework.dll
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\System.Data.SQLite.dll
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\EntityFramework.xml
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\System.Data.SQLite.xml
+D:\Projects\Desktop\dotNet\electrika\atest\bin\Debug\System.Data.SQLite.dll.config
+D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.csproj.CopyComplete
