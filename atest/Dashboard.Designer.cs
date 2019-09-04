@@ -44,12 +44,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.departement_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.equipement_label = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panne_label = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -116,7 +116,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.departement_label, 1, 0);
             this.tableLayoutPanel2.ForeColor = System.Drawing.Color.Black;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -136,23 +136,23 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // departement_label
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 47);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "14";
+            this.departement_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.departement_label.AutoSize = true;
+            this.departement_label.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departement_label.Location = new System.Drawing.Point(118, 15);
+            this.departement_label.Name = "departement_label";
+            this.departement_label.Size = new System.Drawing.Size(64, 47);
+            this.departement_label.TabIndex = 1;
+            this.departement_label.Text = "14";
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.equipement_label, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox3, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(212, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -161,17 +161,17 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 77);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // label2
+            // equipement_label
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(107, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 47);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "123";
+            this.equipement_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.equipement_label.AutoSize = true;
+            this.equipement_label.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equipement_label.ForeColor = System.Drawing.Color.Black;
+            this.equipement_label.Location = new System.Drawing.Point(107, 15);
+            this.equipement_label.Name = "equipement_label";
+            this.equipement_label.Size = new System.Drawing.Size(86, 47);
+            this.equipement_label.TabIndex = 2;
+            this.equipement_label.Text = "123";
             // 
             // pictureBox3
             // 
@@ -188,7 +188,7 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panne_label, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(420, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -197,17 +197,17 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(200, 77);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // label3
+            // panne_label
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(118, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 47);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "56";
+            this.panne_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panne_label.AutoSize = true;
+            this.panne_label.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panne_label.ForeColor = System.Drawing.Color.Red;
+            this.panne_label.Location = new System.Drawing.Point(118, 15);
+            this.panne_label.Name = "panne_label";
+            this.panne_label.Size = new System.Drawing.Size(64, 47);
+            this.panne_label.TabIndex = 2;
+            this.panne_label.Text = "56";
             // 
             // pictureBox2
             // 
@@ -270,6 +270,7 @@
             this.Location = new System.Drawing.Point(0, 3);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -293,11 +294,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label departement_label;
+        private System.Windows.Forms.Label equipement_label;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label panne_label;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

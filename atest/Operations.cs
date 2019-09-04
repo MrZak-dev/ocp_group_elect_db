@@ -19,7 +19,7 @@ namespace electrika
         }
         public void SqliteConnection() {
             //initialise the database
-            SQLiteConnection connection = new SQLiteConnection("Data Source=D:/Projects/Desktop/dotNet/electrika/res/database/laverie.db");
+            SQLiteConnection connection = new SQLiteConnection("Data Source=../../../res/database/laverie.db");
             connection.Open();
             Console.WriteLine(connection.State.ToString());
             //
