@@ -16,6 +16,13 @@ namespace electrika
         public Search()
         {
             InitializeComponent();
+
+            //hide image and shema btn
+            technical_img.ImageLocation = "../../../res/logo-ocp.png";
+            shema_pdf_btn.Visible = false;
+            // nombre and observation set to 0 at beginning
+            equipement_nmbr_label.Text = "0";
+            equipement_observation_label.Text = "0";
             //sqlite connection initialization
             sqliteConnection = new SQLiteConnection("Data Source=../../../res/database/laverie.db");
             //open the connection
@@ -64,26 +71,50 @@ namespace electrika
 
             //sqlite connection and command
             sqliteConnection.Open();
-            sqlQuery = "SELECT f.id ,f.shema_pdf , e.nombre , e.observation FROM fiche_technique f , equipement e " +
-                "WHERE f.equipement_id = e.id AND e.id = " + searchedEquipementId[1];
+            //equpement informations query
+            sqlQuery = "SELECT  e.nombre , e.observation FROM  equipement e WHERE  e.id = " + searchedEquipementId[1];
+            //fiche technique query 
+            var technicalImgQuery = "SELECT f.id , f.shema_pdf  FROM fiche_technique f ," +
+                " equipement e WHERE f.equipement_id = e.id and e.id =  " + searchedEquipementId[1];
+            //fiche technique query command
+            var technicalImgSqliteCommand = new SQLiteCommand(technicalImgQuery, sqliteConnection);
+            //fiche technique reader
+            SQLiteDataReader technicalImgReader = technicalImgSqliteCommand.ExecuteReader();
+
             sqliteCommand = new SQLiteCommand(sqlQuery, sqliteConnection);
             sqliteReader = sqliteCommand.ExecuteReader();
             try
             {
-                if (sqliteReader.HasRows)
+                while (sqliteReader.Read())
                 {
-                    while (sqliteReader.Read())
+                    if (sqliteReader.GetString(0) != "")
+                    {
+                        equipement_nmbr_label.Text = sqliteReader.GetString(0);
+                    }
+                    else {
+                        equipement_nmbr_label.Text = "non-défini";
+                    }
+
+                    if (sqliteReader.GetString(1) != "") {
+                        equipement_observation_label.Text = sqliteReader.GetString(1);
+                    }
+                    else {
+                        equipement_observation_label.Text = "non-défini";
+                    }
+                }
+                if (technicalImgReader.HasRows)
+                {
+                    while (technicalImgReader.Read())
                     {
                         //set technical image format image{number}.png
                         technical_img.ImageLocation = "../../../res/fiche_technique_img/image" +
-                        sqliteReader.GetInt32(0).ToString() + ".png";
-
+                        technicalImgReader.GetInt32(0).ToString() + ".png";
+                        shema_pdf_btn.Visible = true;
                     }
-                    technical_img.Visible = false;
-
                 }
                 else {
-                    Console.WriteLine("noooo dataaaaaa");
+                    technical_img.ImageLocation = "../../../res/logo-ocp.png";
+                    shema_pdf_btn.Visible = false;
                 }
                 
             }

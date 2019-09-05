@@ -31,27 +31,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.filterBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.stationSelect = new System.Windows.Forms.ComboBox();
+            this.departementSelect = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.operation = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.posteSelect = new System.Windows.Forms.ComboBox();
+            this.equipement_grid = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipement_grid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,7 +65,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.filterBox, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -93,14 +88,15 @@
             this.label1.Text = "Nom de composant :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // filterBox
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Location = new System.Drawing.Point(196, 7);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(437, 32);
-            this.textBox1.TabIndex = 1;
+            this.filterBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.filterBox.Location = new System.Drawing.Point(196, 7);
+            this.filterBox.Margin = new System.Windows.Forms.Padding(4);
+            this.filterBox.Name = "filterBox";
+            this.filterBox.Size = new System.Drawing.Size(437, 32);
+            this.filterBox.TabIndex = 1;
+            this.filterBox.TextChanged += new System.EventHandler(this.FilterBox_TextChanged);
             // 
             // panel2
             // 
@@ -120,12 +116,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.comboBox1, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox2, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.stationSelect, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.departementSelect, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox3, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.posteSelect, 5, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -133,23 +129,27 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(643, 56);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // comboBox1
+            // stationSelect
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(99, 31);
-            this.comboBox1.TabIndex = 6;
+            this.stationSelect.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.stationSelect.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stationSelect.FormattingEnabled = true;
+            this.stationSelect.Location = new System.Drawing.Point(96, 15);
+            this.stationSelect.Name = "stationSelect";
+            this.stationSelect.Size = new System.Drawing.Size(78, 28);
+            this.stationSelect.TabIndex = 6;
+            this.stationSelect.SelectedIndexChanged += new System.EventHandler(this.StationSelect_SelectedIndexChanged);
             // 
-            // comboBox2
+            // departementSelect
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(361, 15);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(80, 31);
-            this.comboBox2.TabIndex = 4;
+            this.departementSelect.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.departementSelect.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departementSelect.FormattingEnabled = true;
+            this.departementSelect.Location = new System.Drawing.Point(340, 15);
+            this.departementSelect.Name = "departementSelect";
+            this.departementSelect.Size = new System.Drawing.Size(108, 28);
+            this.departementSelect.TabIndex = 4;
+            this.departementSelect.SelectedIndexChanged += new System.EventHandler(this.DepartementSelect_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -165,7 +165,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(447, 16);
+            this.label4.Location = new System.Drawing.Point(454, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 23);
             this.label4.TabIndex = 3;
@@ -175,94 +175,56 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(201, 16);
+            this.label3.Location = new System.Drawing.Point(180, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Departement :";
             // 
-            // comboBox3
+            // posteSelect
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(533, 15);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(98, 31);
-            this.comboBox3.TabIndex = 5;
+            this.posteSelect.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.posteSelect.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posteSelect.FormattingEnabled = true;
+            this.posteSelect.Location = new System.Drawing.Point(540, 15);
+            this.posteSelect.Name = "posteSelect";
+            this.posteSelect.Size = new System.Drawing.Size(98, 29);
+            this.posteSelect.TabIndex = 5;
+            this.posteSelect.SelectedIndexChanged += new System.EventHandler(this.PosteSelect_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // equipement_grid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.designation,
-            this.nombre,
-            this.observation,
-            this.departement,
-            this.operation});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 129);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 199);
-            this.dataGridView1.TabIndex = 2;
+            this.equipement_grid.AllowUserToAddRows = false;
+            this.equipement_grid.AllowUserToDeleteRows = false;
+            this.equipement_grid.AllowUserToResizeRows = false;
+            this.equipement_grid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.equipement_grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.equipement_grid.BackgroundColor = System.Drawing.Color.White;
+            this.equipement_grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.equipement_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.equipement_grid.Location = new System.Drawing.Point(4, 129);
+            this.equipement_grid.MultiSelect = false;
+            this.equipement_grid.Name = "equipement_grid";
+            this.equipement_grid.ReadOnly = true;
+            this.equipement_grid.RowHeadersVisible = false;
+            this.equipement_grid.RowHeadersWidth = 51;
+            this.equipement_grid.RowTemplate.Height = 24;
+            this.equipement_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.equipement_grid.Size = new System.Drawing.Size(642, 163);
+            this.equipement_grid.TabIndex = 2;
             // 
-            // Id
+            // button2
             // 
-            this.Id.HeaderText = "id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 90;
-            // 
-            // designation
-            // 
-            this.designation.HeaderText = "designation";
-            this.designation.MinimumWidth = 6;
-            this.designation.Name = "designation";
-            this.designation.ReadOnly = true;
-            this.designation.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 90;
-            // 
-            // observation
-            // 
-            this.observation.HeaderText = "observation";
-            this.observation.MinimumWidth = 6;
-            this.observation.Name = "observation";
-            this.observation.ReadOnly = true;
-            this.observation.Width = 125;
-            // 
-            // departement
-            // 
-            this.departement.HeaderText = "departement";
-            this.departement.MinimumWidth = 6;
-            this.departement.Name = "departement";
-            this.departement.ReadOnly = true;
-            this.departement.Width = 125;
-            // 
-            // operation
-            // 
-            this.operation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.operation.HeaderText = "Operations";
-            this.operation.MinimumWidth = 6;
-            this.operation.Name = "operation";
-            this.operation.ReadOnly = true;
-            this.operation.Text = "Press";
-            this.operation.ToolTipText = "tesdt";
-            this.operation.Width = 40;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(238, 298);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(137, 39);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Operations";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // Operations
             // 
@@ -270,7 +232,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(650, 340);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.equipement_grid);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -285,7 +248,7 @@
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipement_grid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,20 +259,15 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox filterBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox stationSelect;
+        private System.Windows.Forms.ComboBox posteSelect;
+        private System.Windows.Forms.ComboBox departementSelect;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn designation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departement;
-        private System.Windows.Forms.DataGridViewButtonColumn operation;
+        private System.Windows.Forms.DataGridView equipement_grid;
+        private System.Windows.Forms.Button button2;
     }
 }

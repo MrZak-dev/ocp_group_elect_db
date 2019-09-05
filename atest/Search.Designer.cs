@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.search_box = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.shema_pdf_btn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.technical_img = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.equipement_nmbr_label = new System.Windows.Forms.Label();
+            this.equipement_observation_label = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,6 +61,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(650, 62);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(551, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 54);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Valider";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -103,7 +115,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.shema_pdf_btn);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 62);
@@ -112,20 +124,20 @@
             this.panel2.Size = new System.Drawing.Size(650, 207);
             this.panel2.TabIndex = 1;
             // 
-            // button1
+            // shema_pdf_btn
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(456, 51);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 92);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Shema";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.shema_pdf_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shema_pdf_btn.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.shema_pdf_btn.Image = ((System.Drawing.Image)(resources.GetObject("shema_pdf_btn.Image")));
+            this.shema_pdf_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.shema_pdf_btn.Location = new System.Drawing.Point(456, 51);
+            this.shema_pdf_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.shema_pdf_btn.Name = "shema_pdf_btn";
+            this.shema_pdf_btn.Size = new System.Drawing.Size(112, 92);
+            this.shema_pdf_btn.TabIndex = 2;
+            this.shema_pdf_btn.Text = "Shema";
+            this.shema_pdf_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shema_pdf_btn.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -168,32 +180,33 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Observation";
             // 
-            // label4
+            // equipement_nmbr_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(133, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 23);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "1";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.equipement_nmbr_label.AutoSize = true;
+            this.equipement_nmbr_label.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equipement_nmbr_label.Location = new System.Drawing.Point(133, 40);
+            this.equipement_nmbr_label.Name = "equipement_nmbr_label";
+            this.equipement_nmbr_label.Size = new System.Drawing.Size(21, 23);
+            this.equipement_nmbr_label.TabIndex = 2;
+            this.equipement_nmbr_label.Text = "1";
+            this.equipement_nmbr_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // equipement_observation_label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(484, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 23);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "4000 A";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.equipement_observation_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.equipement_observation_label.AutoSize = true;
+            this.equipement_observation_label.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equipement_observation_label.Location = new System.Drawing.Point(480, 39);
+            this.equipement_observation_label.Name = "equipement_observation_label";
+            this.equipement_observation_label.Size = new System.Drawing.Size(73, 23);
+            this.equipement_observation_label.TabIndex = 3;
+            this.equipement_observation_label.Text = "4000 A";
+            this.equipement_observation_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.equipement_observation_label);
+            this.panel4.Controls.Add(this.equipement_nmbr_label);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -201,18 +214,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(650, 71);
             this.panel4.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(551, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 54);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Valider";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // Search
             // 
@@ -250,11 +251,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox technical_img;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button shema_pdf_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label equipement_nmbr_label;
+        private System.Windows.Forms.Label equipement_observation_label;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button2;
     }
