@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace electrika
 {
     public partial class OperationsForms : Form
     {
+        //sqlite connection properties
+        private SQLiteConnection sqliteConnection;
+
         private string equipementId;
         public OperationsForms()
         {
@@ -24,20 +28,63 @@ namespace electrika
 
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void OperationsForms_Load(object sender, EventArgs e)
         {
-            //label1.Text = equipementId;
+            //equipement informations sqlitecommand , sql query and sqlitdatareader
+            SQLiteCommand equipementinfoSqlCommand;
+            SQLiteDataReader equipementSqlDataReader;
+            string equipementInfoSqlQuery = "SELECT e.designation , e.nombre , e.observation , d.nom , e.panne " +
+                "FROM equipement e , departement d WHERE e.departement_id = d.id AND e.id =" + this.equipementId; ;
+            //Departement list sqliteCommand,sql query and sqliteDataReader
+            SQLiteCommand departementsListSqlCommand;
+            SQLiteDataReader departementsListSqlDataReader;
+            string departementsListSqlQuery = "SELECT nom FROM departement";
+            //sqlite connection initialization
+            sqliteConnection = new SQLiteConnection("Data Source=../../../res/database/laverie.db");
+            //open the connection
+            sqliteConnection.Open();
+
+            //passing value to commands
+            equipementinfoSqlCommand = new SQLiteCommand(equipementInfoSqlQuery, sqliteConnection);
+            departementsListSqlCommand = new SQLiteCommand(departementsListSqlQuery, sqliteConnection);
+
+            // executing commands
+            try {
+                equipementSqlDataReader = equipementinfoSqlCommand.ExecuteReader();
+                departementsListSqlDataReader = departementsListSqlCommand.ExecuteReader();
+                //getting select form items
+                while (departementsListSqlDataReader.Read()) {
+                    equipementDepartementSelect.Items.Add(departementsListSqlDataReader.GetString(0));
+                }
+                //getting equipement data
+                while (equipementSqlDataReader.Read()) {
+                    equipementDesignationText.Text = equipementSqlDataReader.GetString(0);
+                    equipementNombreText.Text = equipementSqlDataReader.GetString(1);
+                    equipementObservationText.Text = equipementSqlDataReader.GetString(2);
+
+                    equipementDepartementSelect.Text = equipementSqlDataReader.GetString(3);
+
+                    if (equipementSqlDataReader.GetString(4).Equals("oui")) {
+                        panneCheck.Checked = true;
+                    }
+                    
+                    
+                }
+
+               
+            } catch (Exception error) {
+                Console.WriteLine(error.ToString());
+            } finally { }
+            
+            
+
+
+
+
         }
 
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void Button1_Click(object sender, EventArgs e)
         {

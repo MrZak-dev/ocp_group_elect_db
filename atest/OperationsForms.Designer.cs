@@ -34,14 +34,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.equipementDepartementSelect = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.equipementDesignationText = new System.Windows.Forms.TextBox();
+            this.equipementObservationText = new System.Windows.Forms.TextBox();
+            this.equipementNombreText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.AddOperationsPanel = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
+            this.panneCheck = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -104,14 +105,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.comboBox3, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.equipementDepartementSelect, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.equipementDesignationText, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.equipementObservationText, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.equipementNombreText, 3, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 85);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -119,16 +120,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(500, 108);
             this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
-            // comboBox3
+            // equipementDepartementSelect
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(378, 68);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(119, 29);
-            this.comboBox3.TabIndex = 7;
+            this.equipementDepartementSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.equipementDepartementSelect.FormattingEnabled = true;
+            this.equipementDepartementSelect.Location = new System.Drawing.Point(378, 68);
+            this.equipementDepartementSelect.Name = "equipementDepartementSelect";
+            this.equipementDepartementSelect.Size = new System.Drawing.Size(119, 29);
+            this.equipementDepartementSelect.TabIndex = 7;
             // 
             // label1
             // 
@@ -172,29 +172,29 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Departement";
             // 
-            // textBox1
+            // equipementDesignationText
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(128, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 30);
-            this.textBox1.TabIndex = 4;
+            this.equipementDesignationText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.equipementDesignationText.Location = new System.Drawing.Point(128, 12);
+            this.equipementDesignationText.Name = "equipementDesignationText";
+            this.equipementDesignationText.Size = new System.Drawing.Size(119, 30);
+            this.equipementDesignationText.TabIndex = 4;
             // 
-            // textBox2
+            // equipementObservationText
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(128, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(119, 30);
-            this.textBox2.TabIndex = 4;
+            this.equipementObservationText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.equipementObservationText.Location = new System.Drawing.Point(128, 66);
+            this.equipementObservationText.Name = "equipementObservationText";
+            this.equipementObservationText.Size = new System.Drawing.Size(119, 30);
+            this.equipementObservationText.TabIndex = 4;
             // 
-            // textBox3
+            // equipementNombreText
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(378, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(119, 30);
-            this.textBox3.TabIndex = 4;
+            this.equipementNombreText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.equipementNombreText.Location = new System.Drawing.Point(378, 12);
+            this.equipementNombreText.Name = "equipementNombreText";
+            this.equipementNombreText.Size = new System.Drawing.Size(119, 30);
+            this.equipementNombreText.TabIndex = 4;
             // 
             // label5
             // 
@@ -306,12 +306,25 @@
             this.button7.Text = "Modifier";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // panneCheck
+            // 
+            this.panneCheck.AutoSize = true;
+            this.panneCheck.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panneCheck.ForeColor = System.Drawing.Color.Red;
+            this.panneCheck.Location = new System.Drawing.Point(17, 196);
+            this.panneCheck.Name = "panneCheck";
+            this.panneCheck.Size = new System.Drawing.Size(109, 25);
+            this.panneCheck.TabIndex = 12;
+            this.panneCheck.Text = "En Panne";
+            this.panneCheck.UseVisualStyleBackColor = true;
+            // 
             // OperationsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(500, 600);
+            this.Controls.Add(this.panneCheck);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.AddOperationsPanel);
             this.Controls.Add(this.label7);
@@ -349,8 +362,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox equipementDesignationText;
+        private System.Windows.Forms.ComboBox equipementDepartementSelect;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
@@ -360,7 +373,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel AddOperationsPanel;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox equipementObservationText;
+        private System.Windows.Forms.TextBox equipementNombreText;
+        private System.Windows.Forms.CheckBox panneCheck;
     }
 }
