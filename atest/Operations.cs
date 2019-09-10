@@ -77,7 +77,12 @@ namespace electrika
         private void Button2_Click(object sender, EventArgs e)
         {
             Console.WriteLine(equipement_grid.SelectedCells[0].Value.ToString());//replace with operation form 
+            string selectedEquipementId = equipement_grid.SelectedCells[0].Value.ToString();
             
+            OperationsForms equipementOperationsForms = new OperationsForms(selectedEquipementId);
+            equipementOperationsForms.Show();
+
+
         }
 
         private void StationSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,6 +104,6 @@ namespace electrika
         {
             equipementData.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", "poste", posteSelect.Text);
         }
-        //TODO : get selected row column id
+        //TODO : get selected row column id done 
     }
 }

@@ -138,6 +138,7 @@
             this.shema_pdf_btn.Text = "Shema";
             this.shema_pdf_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.shema_pdf_btn.UseVisualStyleBackColor = false;
+            this.shema_pdf_btn.Click += new System.EventHandler(this.Shema_pdf_btn_Click);
             // 
             // panel3
             // 

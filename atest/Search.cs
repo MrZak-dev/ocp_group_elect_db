@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace electrika
@@ -12,6 +13,7 @@ namespace electrika
         private SQLiteDataReader sqliteReader;
         private string sqlQuery;
         private AutoCompleteStringCollection equipements_names;
+        private string shemaTypePdf;
         
         public Search()
         {
@@ -110,6 +112,14 @@ namespace electrika
                         technical_img.ImageLocation = "../../../res/fiche_technique_img/image" +
                         technicalImgReader.GetInt32(0).ToString() + ".png";
                         shema_pdf_btn.Visible = true;
+                        if (technicalImgReader.GetValue(1).ToString() == "0")
+                        {
+                            shema_pdf_btn.Visible = false;
+                        }
+                        else
+                        { //set the button click to open pdf shema
+                            shemaTypePdf = technicalImgReader.GetValue(1).ToString();
+                        }
                     }
                 }
                 else {
@@ -128,6 +138,19 @@ namespace electrika
             }
 
 
+        }
+
+        private void Shema_pdf_btn_Click(object sender, EventArgs e)
+        {
+            try {
+                ProcessStartInfo shemaTypePdfFile = new ProcessStartInfo("D:/Projects/Desktop/dotNet/electrika/res/shemaPdf/page-" + shemaTypePdf + ".pdf");
+                Process.Start(shemaTypePdfFile);
+            } catch (Exception error){
+                Console.WriteLine(error.ToString());
+            }
+            Console.WriteLine("../../../res/shemaPdf/page-" + shemaTypePdf + ".pdf");
+            
+            
         }
     }
 }
