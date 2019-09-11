@@ -32,10 +32,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.posteName = new System.Windows.Forms.TextBox();
+            this.posteDescription = new System.Windows.Forms.RichTextBox();
+            this.posteAddBtn = new System.Windows.Forms.Button();
+            this.posteStation = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,8 +61,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.posteName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.posteDescription, 3, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 56);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -93,47 +93,48 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Description";
             // 
-            // textBox1
+            // posteName
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(120, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 28);
-            this.textBox1.TabIndex = 4;
+            this.posteName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.posteName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posteName.Location = new System.Drawing.Point(120, 13);
+            this.posteName.Name = "posteName";
+            this.posteName.Size = new System.Drawing.Size(96, 28);
+            this.posteName.TabIndex = 4;
             // 
-            // richTextBox1
+            // posteDescription
             // 
-            this.richTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(337, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(123, 48);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.posteDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.posteDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posteDescription.Location = new System.Drawing.Point(337, 3);
+            this.posteDescription.Name = "posteDescription";
+            this.posteDescription.Size = new System.Drawing.Size(123, 48);
+            this.posteDescription.TabIndex = 8;
+            this.posteDescription.Text = "";
             // 
-            // button7
+            // posteAddBtn
             // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(175)))), ((int)(((byte)(50)))));
-            this.button7.Location = new System.Drawing.Point(196, 170);
-            this.button7.Name = "button7";
-            this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button7.Size = new System.Drawing.Size(100, 34);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Ajouter";
-            this.button7.UseVisualStyleBackColor = true;
+            this.posteAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.posteAddBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posteAddBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(175)))), ((int)(((byte)(50)))));
+            this.posteAddBtn.Location = new System.Drawing.Point(196, 170);
+            this.posteAddBtn.Name = "posteAddBtn";
+            this.posteAddBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.posteAddBtn.Size = new System.Drawing.Size(100, 34);
+            this.posteAddBtn.TabIndex = 15;
+            this.posteAddBtn.Text = "Ajouter";
+            this.posteAddBtn.UseVisualStyleBackColor = true;
+            this.posteAddBtn.Click += new System.EventHandler(this.PosteAddBtn_Click);
             // 
-            // comboBox3
+            // posteStation
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(233, 127);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(113, 29);
-            this.comboBox3.TabIndex = 17;
+            this.posteStation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.posteStation.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posteStation.FormattingEnabled = true;
+            this.posteStation.Location = new System.Drawing.Point(233, 127);
+            this.posteStation.Name = "posteStation";
+            this.posteStation.Size = new System.Drawing.Size(113, 29);
+            this.posteStation.TabIndex = 17;
             // 
             // label4
             // 
@@ -152,15 +153,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(490, 230);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.posteStation);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.posteAddBtn);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PosteAdd";
             this.Text = "PosteAdd";
+            this.Load += new System.EventHandler(this.PosteAdd_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -174,10 +176,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox posteName;
+        private System.Windows.Forms.RichTextBox posteDescription;
+        private System.Windows.Forms.Button posteAddBtn;
+        private System.Windows.Forms.ComboBox posteStation;
         private System.Windows.Forms.Label label4;
     }
 }

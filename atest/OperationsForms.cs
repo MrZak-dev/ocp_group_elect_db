@@ -17,6 +17,7 @@ namespace electrika
         private SQLiteConnection sqliteConnection;
 
         private string equipementId;
+        private string equipementPanneState;
         public OperationsForms()
         {
             InitializeComponent();
@@ -65,6 +66,8 @@ namespace electrika
 
                     equipementDepartementSelect.Text = equipementSqlDataReader.GetString(3);
 
+                    //get panne state
+                    this.equipementPanneState = equipementSqlDataReader.GetString(4);
                     if (equipementSqlDataReader.GetString(4).Equals("oui")) {
                         panneCheck.Checked = true;
                     }
@@ -75,7 +78,9 @@ namespace electrika
                
             } catch (Exception error) {
                 Console.WriteLine(error.ToString());
-            } finally { }
+            } finally {
+                sqliteConnection.Close();
+            }
             
             
 
@@ -129,6 +134,66 @@ namespace electrika
             AddOperationsPanel.Controls.Clear();
             AddOperationsPanel.Controls.Add(departementAddPanel);
             departementAddPanel.Show();
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            //updating equipement
+            //entries
+            string designation = equipementDesignationText.Text;
+            string nombre = equipementNombreText.Text;
+            string observation = equipementObservationText.Text;
+            string departement = equipementDepartementSelect.Text;
+            string panne;
+
+            sqliteConnection.Open();
+
+            if (panneCheck.Checked)
+            {
+                panne = "oui";
+            }
+            else {
+                panne = "non";
+            }
+            if (!this.equipementPanneState.Equals(panne)) {
+                this.equipementPanneState = panne;
+                string newPanneQuery = "INSERT INTO panne(equipement_id,date, en_panne) " +
+                    "VALUES('"+ this.equipementId +"','"+DateTime.Now.ToString("MM/dd/yyyy hh:mm tt")+"' , '"+panne+"')";
+                SQLiteCommand newPanneCommand = new SQLiteCommand(newPanneQuery, sqliteConnection);
+                try {
+                    newPanneCommand.ExecuteNonQuery();
+                } catch (Exception error) {
+                    Console.WriteLine(error.ToString());
+                }
+
+            }
+
+            
+            //update query 
+            string equipementUpdateQuery = "UPDATE equipement set designation ='" + designation + "' , nombre = '" + nombre + "' ," +
+                " observation = '" + observation + "' ," +
+                "panne='" + panne + "',departement_id = (select id from departement where nom ='" + departement + "') " +
+                "WHERE id =" + this.equipementId;
+            SQLiteCommand updateCommand = new SQLiteCommand(equipementUpdateQuery, sqliteConnection);
+
+            try {
+                updateCommand.ExecuteNonQuery();
+                
+                
+            }
+            catch (Exception error) {
+                Console.WriteLine(error.ToString());
+            } finally {
+                updateCommand = null;
+                sqliteConnection.Close();
+                MessageBox.Show("Updated");
+                
+            }
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

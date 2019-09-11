@@ -97,6 +97,7 @@
             this.button5.Size = new System.Drawing.Size(36, 31);
             this.button5.TabIndex = 0;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -125,7 +126,7 @@
             // 
             this.equipementDepartementSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.equipementDepartementSelect.FormattingEnabled = true;
-            this.equipementDepartementSelect.Location = new System.Drawing.Point(378, 68);
+            this.equipementDepartementSelect.Location = new System.Drawing.Point(378, 66);
             this.equipementDepartementSelect.Name = "equipementDepartementSelect";
             this.equipementDepartementSelect.Size = new System.Drawing.Size(119, 29);
             this.equipementDepartementSelect.TabIndex = 7;
@@ -305,6 +306,7 @@
             this.button7.TabIndex = 11;
             this.button7.Text = "Modifier";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // panneCheck
             // 
