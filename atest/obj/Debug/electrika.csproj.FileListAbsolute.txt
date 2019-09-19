@@ -36,3 +36,4 @@ D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.DepartementAdd.re
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.EquipementAdd.resources
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.PosteAdd.resources
 D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.StationAdd.resources
+D:\Projects\Desktop\dotNet\electrika\atest\obj\Debug\electrika.Pannes.resources

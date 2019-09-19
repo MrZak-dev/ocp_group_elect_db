@@ -67,6 +67,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 49);
             this.panel1.TabIndex = 1;
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseMove);
             // 
             // panel6
             // 
@@ -87,6 +88,7 @@
             this.button6.Size = new System.Drawing.Size(36, 31);
             this.button6.TabIndex = 0;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // button5
             // 

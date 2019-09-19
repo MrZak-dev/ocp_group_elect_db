@@ -158,7 +158,7 @@ namespace electrika
             if (!this.equipementPanneState.Equals(panne)) {
                 this.equipementPanneState = panne;
                 string newPanneQuery = "INSERT INTO panne(equipement_id,date, en_panne) " +
-                    "VALUES('"+ this.equipementId +"','"+DateTime.Now.ToString("MM/dd/yyyy hh:mm tt")+"' , '"+panne+"')";
+                    "VALUES('"+ this.equipementId +"','"+DateTime.Now.ToString("yyyy-MM-dd")+"' , '"+panne+"')";
                 SQLiteCommand newPanneCommand = new SQLiteCommand(newPanneQuery, sqliteConnection);
                 try {
                     newPanneCommand.ExecuteNonQuery();
@@ -193,7 +193,20 @@ namespace electrika
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+        }
+
+        private void Panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -30,12 +30,12 @@ namespace electrika
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -74,6 +74,39 @@ namespace electrika
             panelsContainer.Controls.Clear();
             panelsContainer.Controls.Add(operationsPanel);
             operationsPanel.Show();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            //creating a new Operations panel
+            Pannes pannesPanel = new Pannes(); //we will pass data through constructure next time
+            pannesPanel.TopLevel = false;
+
+            //clear the panel old controls content 
+            panelsContainer.Controls.Clear();
+            panelsContainer.Controls.Add(pannesPanel);
+            pannesPanel.Show();
+        }
+
+        private void Panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(Cursor.Position.X  - 392, Cursor.Position.Y - 20);
+            }
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            //creating a new summary panel
+            Dashboard dashboardPanel = new Dashboard(); //we will pass data through constructure next time
+            dashboardPanel.TopLevel = false;
+
+            //clear the panel old controls content 
+            panelsContainer.Controls.Clear();
+            panelsContainer.Controls.Add(dashboardPanel);
+            dashboardPanel.Show();
         }
     }
 }

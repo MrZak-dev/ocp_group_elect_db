@@ -40,6 +40,8 @@ namespace electrika
                     equipementData.Rows.Add(oneRow);
                     //equipement_grid.Rows.Add(oneRow);
 
+
+                    //DropDown select fillings
                     if (!departementSelect.Items.Contains(reader.GetString(4))) {
                         departementSelect.Items.Add(reader.GetString(4));
                     }
